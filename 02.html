@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+  <title>Inheritance</title>
+</head>
+<html>
+  <body>
+    <style>div {color: red}</style>
+    <div></div>
+    <script>
+      const root = document.querySelector('div').attachShadow({ mode: 'open'});
+      root.innerHTML = '<p>I am red</p>';
+    </script>
+  </body>
+</html>

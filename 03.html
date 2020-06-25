@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+  <title>Custom CSS Properties</title>
+</head>
+<html>
+  <body>
+    <style>:root {--color: red}</style>
+    <div></div>
+    <script>
+      const root = document.querySelector('div').attachShadow({ mode: 'open'});
+      root.innerHTML = `
+        <style>p {color: var(--color)}</style>
+        <p>I am red</p>
+      `;
+    </script>
+  </body>
+</html>

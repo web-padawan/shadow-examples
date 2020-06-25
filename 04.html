@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <title>Form submission</title>
+</head>
+<html>
+  <body>
+    <form>
+      <input name="input">
+      <custom-button></custom-button>
+    </form>
+    <script>
+      customElements.define('custom-button', class extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: 'open' });
+          this.shadowRoot.innerHTML = '<button>Submit</button>';
+        }
+      });
+    </script>
+  </body>
+</html>

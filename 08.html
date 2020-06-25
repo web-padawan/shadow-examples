@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <title>Part forwarding</title>
+</head>
+<html>
+  <body>
+    <style>
+  div::part(text) {
+    color: red
+  }
+</style>
+    <div></div>
+    <script>
+      const root = document.querySelector('div').attachShadow({ mode: 'open'});
+      root.innerHTML = '<div exportparts="text"></div>';
+      const nested = root.firstChild.attachShadow({ mode: 'open'});
+      nested.innerHTML = '<div part="text">I am red</div>';
+    </script>
+  </body>
+</html>

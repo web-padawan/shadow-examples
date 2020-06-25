@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+  <title>CSS Shadow Parts</title>
+</head>
+<html>
+  <body>
+    <style>div::part(text) {color: red}</style>
+    <div></div>
+    <script>
+      const root = document.querySelector('div').attachShadow({ mode: 'open'});
+      root.innerHTML = '<p part="text">I am red</p>';
+    </script>
+  </body>
+</html>

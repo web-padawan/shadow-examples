@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>ID references</title>
+</head>
+<html>
+  <body>
+    <custom-label></custom-label>
+    <custom-input></custom-input>
+    <script>
+      customElements.define('custom-label', class extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: 'open' });
+          this.shadowRoot.innerHTML = '<label id="custom">Custom</label>';
+        }
+      });
+
+      customElements.define('custom-input', class extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: 'open' });
+          this.shadowRoot.innerHTML = '<input aria-labelledby="custom">';
+        }
+      });
+    </script>
+  </body>
+</html>

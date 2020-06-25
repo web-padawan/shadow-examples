@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <title>Form participation</title>
+</head>
+<html>
+  <body>
+    <form>
+      <input name="input">
+      <custom-input></custom-input>
+      <button>Submit</button>
+    </form>
+    <script>
+      customElements.define('custom-input', class extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: 'open' });
+          this.shadowRoot.innerHTML = '<input name="custom">';
+        }
+      });
+    </script>
+  </body>
+</html>
