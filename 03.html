@@ -4,12 +4,20 @@
 </head>
 <html>
   <body>
-    <style>:root {--color: red}</style>
+    <style>
+      :root {
+        --color: red;
+      }
+    </style>
     <div></div>
     <script>
       const root = document.querySelector('div').attachShadow({ mode: 'open'});
       root.innerHTML = `
-        <style>p {color: var(--color)}</style>
+        <style>
+          p {
+            color: var(--color);
+          }
+        </style>
         <p>I am red</p>
       `;
     </script>

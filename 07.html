@@ -4,7 +4,11 @@
 </head>
 <html>
   <body>
-    <style>div::part(text) {color: red}</style>
+    <style>
+      div::part(text) {
+        color: red;
+      }
+    </style>
     <div></div>
     <script>
       const root = document.querySelector('div').attachShadow({ mode: 'open'});
